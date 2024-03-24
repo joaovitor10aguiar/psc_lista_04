@@ -2,3 +2,32 @@
 senha igual ao nome do usuário, mostrando uma mensagem de erro e
 voltando a pedir as informações.
 */
+
+
+import java.util.Scanner;
+public class UsuarioSenha {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String usuario;
+        String senha;
+
+        do {
+            System.out.print("Digite o nome de usuário: ");
+            usuario = scanner.nextLine();
+
+            System.out.print("Digite a senha: ");
+            senha = scanner.nextLine();
+
+            if (senha.equals(usuario)) {
+                System.out.println("Erro: A senha não pode ser igual ao nome de usuário. Tente novamente.");
+            }
+        } while (senha.equals(usuario));
+
+        System.out.println("Nome de usuário e senha cadastrados com sucesso!");
+
+        scanner.close();
+
+        }
+    }
